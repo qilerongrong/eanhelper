@@ -33,7 +33,6 @@ app.use(bodyparser())
   }))
   .use(router.routes())
   .use(router.allowedMethods())
-
 // logger
 app.use(async (ctx, next) => {
   const start = new Date()

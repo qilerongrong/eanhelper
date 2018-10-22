@@ -6,6 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "debug": "~2.6.8",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
@@ -14,7 +15,7 @@
     "koa-logger": "^3.0.0",
     "koa-onerror": "^3.1.0",
     "koa-router": "^7.2.1",
-    "koa-static": "^3.0.0",
+    "koa-static": "^2.1.0",
     "koa-views": "^6.0.2",
     "nunjucks": "~3.0.0"
   },
