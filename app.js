@@ -17,6 +17,25 @@ const config = require('./config')
 const routes = require('./routes')
 
 const port = process.env.PORT || config.port
+const mongoose = require('mongoose');
+const db = mongoose.connection;
+db.on('error',(error) => {
+  console.log('connection error!',error)
+});
+db.once('open', (obj) => {
+  console.log(db.name)
+  console.log('db connected!')
+})
+mongoose.connect('mongodb+srv://victor:Victor870623@cluster-victor-phst5.mongodb.net/sample-aribnb?retryWrites=true',
+  {
+    dbName:'sample_airbnb',
+    user:'victor',
+    pass:'Victor870623',
+    useNewUrlParser:true
+  }
+);
+console.log('connecting db...');
+
 
 // error handler
 onerror(app)
@@ -55,6 +74,6 @@ app.on('error', function(err, ctx) {
   logger.error('server error', err, ctx)
 })
 
-module.exports = app.listen(config.port, () => {
+module.exports = app.listen(3001, () => {
   console.log(`Listening on http://localhost:${config.port}`)
 })
